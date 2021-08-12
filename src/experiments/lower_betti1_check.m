@@ -1,4 +1,7 @@
+addpath('../util')
+addpath('../../lib/pathhomology')
 rng(42);
+
 n_range = 20:5:150;
 p_range = logspace(log10(0.0001), log10(0.15));
 tests = 100;

@@ -1,3 +1,4 @@
+addpath('../bounds')
 n=10:10:3000;
 large_p = zeros(1, length(n));
 practical_p = zeros(1, length(n));

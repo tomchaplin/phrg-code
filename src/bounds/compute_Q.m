@@ -1,6 +1,14 @@
-mode = 'flag';
-if strcmp(mode,'flag')
-    addpath('../util')
+switch(MODE)
+    case 'nreg'
+        addpath('../../lib/pathhomology')
+    case 'dflag'
+        addpath('../util')
+end
+switch(MODE)
+    case 'nreg'
+        load('../../mat/upper_betti1_check')
+    case 'dflag'
+        load('../../mat/upper_betti1_dflag_check')
 end
 %% Enumerate all undirected 3-path motifs
 paths = cell(1, 4);
@@ -35,7 +43,7 @@ for i = 0:(2^8 - 1)
 end
 
 %% Compute alpha
-alpha = cellfun(@(x) compute_alpha(x, mode), motifs);
+alpha = cellfun(@(x) compute_alpha(x, MODE), motifs);
 
 %% Compute gamma by checking subgraphs
 gamma = zeros(2^8, 4);
@@ -81,10 +89,10 @@ for j = 1:4
     end
 end
 
-switch(mode)
-    case 'pathhom'
+switch(MODE)
+    case 'nreg'
         save('computed_Q')
-    case 'flag'
+    case 'dflag'
         save('computed_Q_flag')
 end
 
@@ -99,17 +107,17 @@ end
 
 % We check whether centre connects to start and end first
 % If that happens then we check that betti_1 = 0
-function ret_val = compute_alpha(motif, mode)
+function ret_val = compute_alpha(motif, MODE)
     if ~connectsInTwo(motif)
         ret_val = false;
         return
     end
-    switch(mode)
-        case 'pathhom'
+    switch(MODE)
+        case 'nreg'
             G = digraph(motif);
             ph = pathhomology(G,2,'symbolic');
             ret_val = (ph.betti(2) == 0);
-        case 'flag'
+        case 'dflag'
             bettis = flagser_hom(motif, 1,...
                 "../../lib/flagser/flagser");
             ret_val = (bettis(2) == 0);

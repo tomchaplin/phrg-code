@@ -1,4 +1,4 @@
-# Open Access - Code and Data
+# First Betti number of the path homology of random directed graphs - Code and Data Repository
 
 ## Requirements and setup
 The [PerformantPathHomology](https://github.com/SteveHuntsmanBAESystems/PerformantPathHomology) uses MATLAB's symbolic toolbox and hence both MATLAB and the toolbox are required to run some of the scripts.

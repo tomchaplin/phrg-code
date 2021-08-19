@@ -1,5 +1,5 @@
 addpath('../bounds')
-n=10:10:3000;
+n=10:10:1000;
 large_p = zeros(1, length(n));
 practical_p = zeros(1, length(n));
 ep = 0.05;
@@ -14,8 +14,10 @@ end
 plot(n, large_p);
 hold on
 plot(n, practical_p);
+set(gca,'xscale','log');
+set(gca,'yscale','log');
 
 ylim([0 1])
 xlabel('$n$', 'Interpreter','latex')
 ylabel('$p_c$', 'Interpreter','latex')
-legend({'Theorem 4.17','Theorem 5.3'})
+legend({'Theorem 4.16','Theorem A.7'})

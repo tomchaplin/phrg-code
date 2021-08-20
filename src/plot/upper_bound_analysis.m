@@ -19,5 +19,5 @@ set(gca,'yscale','log');
 
 ylim([0 1])
 xlabel('$n$', 'Interpreter','latex')
-ylabel('$p_c$', 'Interpreter','latex')
+ylabel('$p_u^t(n)$', 'Interpreter','latex')
 legend({'Theorem 4.16','Theorem A.7'})

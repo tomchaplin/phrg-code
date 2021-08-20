@@ -7,7 +7,7 @@ for i=1:length(n)
 end
 plot(n, critical_p)
 xlabel('$n$','Interpreter','latex')
-ylabel('$p_c(n)$','Interpreter','latex')
+ylabel('$p_l^t(n)$','Interpreter','latex')
 
 % Plot our theoretical bound against empirical
 figure
@@ -17,7 +17,7 @@ hold on
 plot(n(4:30), critical_p(4:30))
 legend({'Empirical $p=p_l(n)$',...
     sprintf('Best fit $p= %.3f \\,n^{%.3f}$', exp(intercept), slope),...
-    'Theory $p=p_c(n)$'}, 'Interpreter','latex')
+    'Theory $p=p_l^t(n)$'}, 'Interpreter','latex')
 ylabel('$p$','Interpreter','latex')
 
 

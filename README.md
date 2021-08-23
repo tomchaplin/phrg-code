@@ -18,9 +18,9 @@ Then run the setup script which will download both of these libraries with `git`
 │   ├── 📁 experiments    - Data collection scripts for experiments section
 │   ├── 📁 plot           - Script for converting experimental data into plots
 │   ├── 📁 util           - Utility functions used in other scripts
-│   └── 🗎  compute_Q.m    - Script for computing q_{m,l} matrix in explicit bounds
-├── 🗎 README.md           - This file
-└── 🗎 setup.sh            - Setup script for importing and building libraries
+│   └── 🗎 compute_Q.m    - Script for computing q_{m,l} matrix in explicit bounds
+├── 🗎 README.md          - This file
+└── 🗎 setup.sh           - Setup script for importing and building libraries
 ```
 Many of the plotting scripts, as well as `compute_Q.m`, begin with a switch on the `MODE` variable.
 The two valid values are `nreg` for non-regular path homology and `dflag` for directed flag complex homology.

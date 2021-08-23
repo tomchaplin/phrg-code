@@ -1,13 +1,9 @@
 switch(MODE)
     case 'nreg'
         addpath('../../lib/pathhomology')
-    case 'dflag'
-        addpath('../util')
-end
-switch(MODE)
-    case 'nreg'
         load('../../mat/upper_betti1_check')
     case 'dflag'
+        addpath('../util')
         load('../../mat/upper_betti1_dflag_check')
 end
 %% Enumerate all undirected 3-path motifs
@@ -39,7 +35,6 @@ for i = 0:(2^8 - 1)
     for j = 1:4
         motifs{i+1,j} = paths{j} + B;
     end
-    % TODO: Could just add motif_edge_count{i+1, j} = sum(vec) here?
 end
 
 %% Compute alpha

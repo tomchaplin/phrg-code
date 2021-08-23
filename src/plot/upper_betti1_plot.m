@@ -32,9 +32,6 @@ hold on
 plot(exp(X(:,2)), exp(X*B));
 set(gca,'xscale','log');
 set(gca,'yscale','log');
-%the_title = sprintf('$$\\alpha=%.2f,\\; slope=%f,\\; intercept=%f$$',...
-%    conf, slope, intercept);
-%title(the_title, 'interpreter','latex');
 legend({'Empirical $p=p_u(n)$',...
     sprintf('$$p = %.3f \\,n^{%.3f}$$', exp(intercept), slope)},...
     'Interpreter','latex')

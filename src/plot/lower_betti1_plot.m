@@ -18,31 +18,20 @@ for i=1:length(n_range)
     pl = [pl p];
 end
 
-% Transform pl to \bar{pl}
-
-%plbar = (1 - (1-pl).^2)';
-plbar = pl';
-x = n_range';
-
 % Linear regression
-Y = log(plbar);
-X = [ones(length(n_range), 1), log(x)];
+Y = log(pl');
+X = [ones(length(n_range), 1), log(n_range)'];
 B = X \ Y;
 intercept = B(1);
 slope = B(2);
 
-
-
 % Plotting
 %figure
-scatter(x, plbar, 'x');
+scatter(n_range, pl, 'x');
 hold on
 plot(exp(X(:,2)), exp(X*B));
 set(gca,'xscale','log');
 set(gca,'yscale','log');
-%the_title = sprintf('$$\\alpha=%.2f,\\; slope=%f,\\; intercept=%f$$',...
-%    conf, slope, intercept);
-%title(the_title, 'interpreter','latex');
 legend({'Empirical $p=p_l(n)$',...
     sprintf('$$p = %.3f \\,n^{%.3f}$$', exp(intercept), slope)},...
     'Interpreter','latex')

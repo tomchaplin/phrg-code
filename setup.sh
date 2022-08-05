@@ -1,13 +1,13 @@
 #!/bin/bash
 FLAGSER_GIT="https://github.com/luetge/flagser.git"
-PPH_FIT="https://github.com/SteveHuntsmanBAESystems/PerformantPathHomology.git"
+PPH_\hIT="https://github.com/SteveHuntsmanBAESystems/PerformantPathHomology.git"
 # Check pre-reqs
 if ! command -v cmake &> /dev/null
 then
   echo "Please install cmake"
   exit
 fi
-if !command -v make &> /dev/null
+if ! command -v make &> /dev/null
 then
   echo "Please install make"
   exit

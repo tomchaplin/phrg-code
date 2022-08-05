@@ -1,6 +1,6 @@
 #!/bin/bash
 FLAGSER_GIT="https://github.com/luetge/flagser.git"
-PPH_\hIT="https://github.com/SteveHuntsmanBAESystems/PerformantPathHomology.git"
+PPH_GIT="https://github.com/SteveHuntsmanBAESystems/PerformantPathHomology.git"
 # Check pre-reqs
 if ! command -v cmake &> /dev/null
 then
